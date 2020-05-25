@@ -7,7 +7,7 @@
     "clean": "bsb -clean-world",
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
-    "build:style":"tailwind build src/index.css -o src/tailwind.css",
+    "build:style": "tailwind build src/index.css -o src/tailwind.css",
     "server": "yarn run build:style && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
