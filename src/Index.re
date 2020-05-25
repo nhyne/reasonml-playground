@@ -1,3 +1,3 @@
-[%bs.raw {|require("./tailwind.css")|}];
+[%bs.raw {|require("./styles/tailwind.css")|}];
 
 ReactDOMRe.renderToElementWithId(<App />, "root");
