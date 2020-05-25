@@ -1,6 +1,6 @@
 .DS_Store
 .idea
-src/tailwind.css
+src/styles/tailwind.css
 .merlin
 .bsb.lock
 npm-debug.log

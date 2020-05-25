@@ -7,7 +7,8 @@
     "clean": "bsb -clean-world",
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
+    "purgecss": "purgecss --css src/styles/tailwind.css --content src/index.html src/*.js --output src/styles/postcss.css",
+    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css && yarn run purgecss",
     "server": "yarn run build:style && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +22,7 @@
   "dependencies": {
     "autoprefixer": "^9.8.0",
     "postcss-cli": "^7.1.1",
+    "postcss-purgecss": "^2.0.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-react": ">=0.7.1",
