@@ -1,4 +1,34 @@
-module Api = {};
+module Api = {
+  let inMemoryCache = ApolloInMemoryCache.createInMemoryCache();
+
+  let httpLink =
+    ApolloLinks.createHttpLink(~uri="localhost:8083/api/graphql", ());
+
+  let instance =
+    ReasonApollo.createApolloClient(~link=httpLink, ~cache=inMemoryCache, ());
+
+  module Something = [%graphql
+    {|
+        query todoList {
+            getTodoList(todoListId: 2) {
+                name
+            }
+        }
+    |}
+  ];
+
+  let getResults = query =>
+    Js.Promise.(
+      Fetch.fetchWithInit(
+        "localhost:8083/api/",
+        Fetch.RequestInit.make(
+          ~method_=Post,
+          //          ~body=Fetch.BodyInit.make(Js.Json.stringify),
+          (),
+        ),
+      )
+    );
+};
 
 [@react.component]
 let make = (~name, ~children) => {
