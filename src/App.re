@@ -1,3 +1,5 @@
+module Api = {};
+
 [@react.component]
 let make = (~name, ~children) => {
   let (count, setCount) = React.useState(() => 0);
