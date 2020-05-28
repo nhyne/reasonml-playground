@@ -8,7 +8,7 @@
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
     "purgecss": "purgecss --css src/styles/tailwind.css --content src/index.html src/*.js --output src/styles/postcss.css",
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css && yarn run purgecss",
+    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "server": "yarn run build:style && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,3 +1,9 @@
-[%bs.raw {|require("./styles/postcss.css")|}];
+[%bs.raw {|require("./styles/tailwind.css")|}];
 
-ReactDOMRe.renderToElementWithId(<App />, "root");
+ReactDOMRe.renderToElementWithId(
+  <App name="adam">
+    <div> <p> {React.string("something in the root!")} </p> </div>
+    <TaskList />
+  </App>,
+  "root",
+);
