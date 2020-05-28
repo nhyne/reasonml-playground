@@ -1,4 +1,6 @@
 [@react.component]
 let make = () => {
-  <div> {ReasonReact.string("One day this will be a timer")} </div>;
+  <div>
+    <Card name="reason" href="localhost:8083" description="something" />
+  </div>;
 };

@@ -1,6 +1,7 @@
-let component = ReasonReact.statelessComponent("card");
-
-let make = (~name, ~description, ~href, _children) => {
-  ...component,
-  render: _self => <div> {ReasonReact.string(name)} </div>,
+[@react.component]
+let make = (~name, ~description, ~href) => {
+  <div>
+    <a href> {ReasonReact.string(description)} </a>
+    <div> {ReasonReact.string(name)} </div>
+  </div>;
 };
